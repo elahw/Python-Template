@@ -5,7 +5,6 @@ import Tkinter as tk
 import tkMessageBox
 
 
-
 def TstTkinter():
     master = tk.Tk()
     master.title("Randon Instructions Generate")
@@ -33,7 +32,12 @@ def TstTkinter():
         print e4.get()
         e1.delete(0,"end")
     def tanchuang():
-        tkMessageBox.showinfo(title="Confirm Info", message="hello world")
+        rt_info_msg = tkMessageBox.showinfo(title="showinfo", message="hello world") # return value is "ok"
+        print rt_info_msg
+        rt_qstn_msg = tkMessageBox.askquestion(title="askquestion", message="Confirm following info") # return value is "yes" or "No"
+        print rt_qstn_msg
+        rt_cncl_msg = tkMessageBox.askokcancel(title='askokcancel',message='hello word')      # return True/False
+        print rt_cncl_msg
         master.quit()
     
     tk.Button(master,text="Ok",width=10, command=tanchuang   ).grid(row=4, column=0, sticky="w",padx=10, pady=5)
